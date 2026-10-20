@@ -262,6 +262,8 @@ export {
   type GuardTelemetryConfig,
   type GuardTelemetryGap,
   type GuardTelemetryGapReason,
+  type GuardTelemetryHealthSnapshot,
+  type GuardTelemetryStreamState,
   type GuardTelemetryUnifiedParams,
   type GuardTelemetryWatchParams,
   type GuardUnknownTopic,
