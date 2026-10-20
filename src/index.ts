@@ -115,6 +115,20 @@ export type {
 } from "./policy.ts";
 
 export {
+  POLICY_JSON_VERSION,
+  decodePolicyJson,
+  encodePolicyJson,
+  policyFromJson,
+  policyToJson,
+} from "./policy-json.ts";
+
+export type {
+  PolicyJson,
+  PolicyJsonProtocolRule,
+  PolicyJsonRecipientWindowCap,
+} from "./policy-json.ts";
+
+export {
   POLICY_SCHEMA_PATH,
   SCHEMA_DIALECT,
   SCHEMA_RULE_ID_ANNOTATION,
@@ -433,6 +447,7 @@ export type {
 // when no logger is supplied: the SDK writes nothing unless a host asks.
 export {
   GUARD_LOG_LEVELS,
+  redactLogMeta,
   SILENT_LOGGER,
   resolveLogger,
   type GuardLogger,
