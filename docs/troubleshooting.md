@@ -21,3 +21,14 @@ the action.
 The current API does not expose `concurrency` or `startFrom`; do not add either
 to an integration config expecting the SDK to act on it. Limit parallel work in
 the caller, and use the supported timeout, cursor, and listener options above.
+## Authorization entries not signed
+
+Ensure the invoke pipeline receives a valid agent key and that the custom account `__check_auth` policy admits the call. Blocked calls are rejected client-side before broadcast.
+
+## No telemetry events emitted
+
+Confirm the `GuardTelemetryListener` is subscribed before the invoke pipeline runs. Simulation diagnostics are only available during the pre-flight window.
+
+## Agent Key Rotation and Recovery
+
+See the [Agent Key Rotation and Recovery runbook](concepts/custom-account-signing.md#operator-runbook-agent-key-rotation-and-recovery) for procedures to rotate the agent key of a custom account and recover from rotation failures.
